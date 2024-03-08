@@ -2,8 +2,7 @@ name: Azure Login and Execute Task
 
 on:
   push:
-    paths:
-      - 'demo/**' # Specify the folder path you want to trigger the workflow on changes
+  # Specify the folder path you want to trigger the workflow on changes
 
 jobs:
   deploy:
