@@ -184,3 +184,5 @@ resource firewall 'Microsoft.Network/azureFirewalls@2023-05-01' = {
     ]
   }
 }
+
+//new
