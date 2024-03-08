@@ -1,0 +1,27 @@
+name: Azure Login and Execute Task
+
+on:
+  push:
+    paths:
+      - 'demo/**' # Specify the folder path you want to trigger the workflow on changes
+
+jobs:
+  deploy:
+    runs-on: 'ubuntu-latest' # or specify 'ubuntu-latest' for GitHub-hosted runners
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: 'Az CLI login'
+        uses: Azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          enable-AzPSSession: true # Azure credentials stored in GitHub repository secrets
+
+      # Add your subsequent steps here, for example:
+      - name: Azure CLI Script
+        run: |
+          az deployment sub create --location norwayeast --template-file ./resourceGroup.bicep
+          az deployment sub create --location norwayeast --template-file ./resourceGroup.bicep
+          # Your Azure CLI commands here
