@@ -22,6 +22,5 @@ jobs:
       # Add your subsequent steps here, for example:
       - name: Azure CLI Script
         run: |
-          az deployment sub create --location norwayeast --template-file ./demo/resourceGroup.bicep
-          az deployment sub create --location norwayeast --template-file ./demo/resourceGroup.bicep
+          az deployment sub create --location norwayeast --template-file .demo\resourceGroup.bicep
           # Your Azure CLI commands here
