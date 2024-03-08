@@ -1,4 +1,4 @@
-moname: Azure Login and Execute Task
+name: Azure Login and Execute Task
 
 on:
   push:
